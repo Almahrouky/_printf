@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * intToString - converts integer to string
+ * intToString - Converts int (32-bit) to string
  * @num: the number to convert
  * @str: the resulting string
  */
@@ -48,7 +48,7 @@ void intToString(int num, char *str){
 }
 
 /**
- * uIntToString - converts unsigned integer to string
+ * uIntToString - Converts unsigned int to string
  * @num: the number to convert
  * @str: the resulting string
  */
@@ -71,7 +71,33 @@ void uIntToString(unsigned int num, char *str){
 }
 
 /**
- * llToString - converts long long integer to string
+ * stringToInt - Converts string to int (32-bit)
+ * @str: the string to convert
+ * Return: int
+ */
+int stringToInt(char *str){
+    int res = 0;
+    int base = pow(10, strlen(str) - 1);
+    while(*str){
+        res += base * (*str - '0');
+        base /= 10;
+        ++str;
+    }
+    return res;
+}
+
+/**
+ * isDigit - Check if a character is a digit or not
+ * @c: character to check
+ * Return: true if it is a digit, false otherwise
+ */
+bool isDigit(char c){
+    if(c >= '0' && c <= '9') return true;
+    else return false;
+}
+
+/**
+ * llToString - Converts long long (int 64-bit) to string
  * @num: the number to convert
  * @str: the resulting string
  */
@@ -94,33 +120,7 @@ void llToString(long long num, char *str){
 }
 
 /**
- * stringToInt - converts string to int
- * @str: the string to convert
- * Return: int
- */
-int stringToInt(char *str){
-    int res = 0;
-    int base = pow(10, strlen(str) - 1);
-    while(*str){
-        res += base * (*str - '0');
-        base /= 10;
-        ++str;
-    }
-    return res;
-}
-
-/**
- * isDigit - check if the character is a digit or not
- * @c: character to check
- * Return: true if it is a digit, false otherwise
- */
-bool isDigit(char c){
-    if(c >= '0' && c <= '9') return true;
-    else return false;
-}
-
-/**
- * llToHex - a function to convert long long to hexadecimal (lower cases)
+ * llToHex - Converts long long (int 64-bit) to hexadecimal (lower case)
  * @num: number to convert
  * @str: the resulting string
  */
@@ -146,11 +146,11 @@ void llToHex(long long num, char* str){
 }
 
 /**
- * ullToHex - a function to convert unsigned long long to hexadecimal (upper cases)
+ * uPtrToHex - Converts uintptr_t number to hexadecimal (lower case)
  * @num: number to convert
  * @str: the resulting string
  */
-void ullToHex(uintptr_t num, char* str){
+void uPtrToHex(uintptr_t num, char* str){
     int ind = 0;
     while(num){
         int rem = num % 16;

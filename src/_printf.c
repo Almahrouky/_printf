@@ -38,6 +38,7 @@ int _printf(const char *text, ...){
             }
             else if(text[ix] == 's'){
                 ss: char *str = va_arg(ptr, char*);
+                if(str == NULL) {str = "(null)"; total = 6;}
                 while(*str && total) {_putchar(*str++); --total;}
             }
             else if(text[ix] == 'd' || text[ix] == 'i'){
@@ -94,7 +95,7 @@ int _printf(const char *text, ...){
                 void *ptr2 = va_arg(ptr, void *);
                 if(ptr2){
                     char str[20];
-                    ullToHex((uintptr_t)ptr2, str);
+                    uPtrToHex((uintptr_t)ptr2, str);
                     _putchar('0');
                     _putchar('x');
                     int size = strlen(str);

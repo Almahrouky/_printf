@@ -19,9 +19,18 @@ This project helped me showcasing of a variadic function, using low-level output
 - `x`: Print a hexadecimal number (lower case).
 - `p`: Print a memory address.
 - `%%`: Print a literal `%` character.
-3. Cases Handling:
-- Handel case of NULL pointer by printing (nil)
-4. Custom Features:
+3. Converting Types Functions:
+- `intToString`: Converts int (32-bit) to string.
+- `uIntToString`: Converts unsigned int to string.
+- `stringToInt`: Converts string to int (32-bit).
+- `isDigit`: Check if a character is a digit or not.
+- `llToString`: Converts long long (int 64-bit) to string.
+- `llToHex`: Converts long long (int 64-bit) to hexadecimal (lower case).
+- `uPtrToHex`: Converts uintptr_t number to hexadecimal (lower case).
+4. Cases Handling:
+- Handeled case of NULL string by printing (null)
+- Handeled case of NULL pointer by printing (nil)
+5. Custom Features:
 - `.9s`: Print at max 9 characters of a string.
 - `.2f`: Print 2 decimal numbers after the float point.
 ## Project Structure

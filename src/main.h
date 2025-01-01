@@ -16,6 +16,6 @@ int stringToInt(char *str);
 bool isDigit(char c);
 void llToString(long long num, char *str);
 void llToHex(long long num, char* str);
-void ullToHex(uintptr_t num, char* str);
+void uPtrToHex(uintptr_t num, char* str);
 
 #endif
