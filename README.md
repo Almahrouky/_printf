@@ -1,7 +1,7 @@
 # _printf
 ## Overview
 `_printf` is a custom implementation of the standard `printf` function in C based on the low-level Unix System Call `write`.  
-The `_printf` function uses `_putchar` function which based on `write` System Call to write a single character to the standard output.  
+Implemented the `_putchar` function to write a single character to the standard output using the `write System Call`.  
 This project enabled me to showcase of variadic functions, utilize low-level output functions, implement converting functions between int, long long, hexadecimal, and string, also dive into the implementation of the built-in functions.
 ## Sample
 ### Sample Input
